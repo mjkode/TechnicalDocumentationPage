@@ -1,5 +1,7 @@
 html,body{
-  font-family: "Open Sans", Arial, Helvetica;
+  min-width: 290px;
+  max-width: 100%;
+  font-family: "Open Sans", Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: white;
@@ -10,21 +12,104 @@ header {
   color: black;
   margin: 10px;
   text-align: center;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 footer {
   margin-top: 30px;
   color: black;
-  background-color: gray;
+  background-color: white;
   padding: 20px;
 }
 
-/* TYPOGRAPHY */
-h1 {font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;}
-h3 {font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px;}
-p {font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;}
-blockquote {font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px;} 
-pre {font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px;}
+h5 {
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  color: gray;
+}
+
+/* Code Styles */
+
+code {
+  font-family: Courier, 'New Courier', monospace;
+  font-size: 14px;
+  background-color: #000000;
+  color: green;
+  word-break: normal;
+  word-wrap: normal;
+  border-radius: 5px;
+  display: block;
+  padding: 20px;
+  margin: 10px 40px 40px 20px;
+  max-width: 80ch;
+}
+
+pre {
+  max-width: 120ch;
+  white-space: pre-wrap; 
+}
+
+
+
+/* LINK */
+a:link, a:visited {
+  padding: 0px 5px;
+  text-align: center;
+  font-weight:700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: green;
+}
+
+a:visted {
+  color: purple;
+}
+
+/* SECTION */
+section{
+  padding-bottom: 40px;
+}
+
+section article {
+  color: #4d4e53;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+/* MAIN */
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+#main-doc > a:link, a:visited {
+  padding: 0px 25px 25px 25px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  background-color: white;
+}
+
+#main-doc li {
+  background: white;
+  margin-bottom: 4px;
+}
 
 /* NAVIGATION */
 #navbar{
@@ -35,9 +120,47 @@ pre {font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant
   width: 300px;
   height: 100%;
   border-right: solid;
-  background-color: gray;
+  background-color: white;
   border-color: black;
 }
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#navbar li {
+  color: #4d4e53;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 10px;
+  color: #4d4e53;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MOBILE */
 @media only screen and (max-width: 815px) {
@@ -46,8 +169,38 @@ pre {font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant
     border: 1px solid;
     height: 207px;
   }
-  
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   #main-doc {
     margin-left: -10px;
   }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
